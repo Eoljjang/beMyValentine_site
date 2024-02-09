@@ -8,8 +8,9 @@ body{
     margin: 0;
 }
 
-#title{
+.title{
     margin-top: 2rem;
+    text-align: center;
 }
 
 .content{
@@ -53,17 +54,17 @@ body{
 
 #yes-btn{
     background-color: #89FF77;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 #no-btn{
     background-color: #FF6161;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 /* Pop-up Dialogs on button click */
-.no-dialog, .yes-dialog{
-    display: flex;
+.no-dialog, .yes-dialog {
+    display: none; /* This gets chaned to display: flex onClick() */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -75,16 +76,56 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 300px; /* Need a specific value to work */
-
-    border: 5px solid black;
+    height: 400px;
+    background: white;
+    border: 4px solid black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.no-dialog{
-    display: none; /* Toggle between display: none and display: flex. */
-    background: white;
+#dramatic-cat-gif {
+    width: auto;
+    height: 250px;
 }
 
-.yes-dialog{
-    display: none;
-    background: white;
+#happy-cat-gif {
+    width: auto;
+    height: 250px;
+}
+
+.dialog-text{
+    text-align: center;
+}
+
+.close-btn-no{ /* Only for the "no" option */
+    align-items: center;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+    width: fit-content;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    background: #FF6161;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.close-btn-yes{ /* Only for the "yes" option */
+    margin-left: auto; /* These 2 margin properties pushes it to top right */
+    margin-bottom: auto;
+
+    align-items: center;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 2.5rem;
+    padding: 7px;
+    border-radius: 10px;
+    font-weight: bold;
+    background: #FF6161;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
 }
